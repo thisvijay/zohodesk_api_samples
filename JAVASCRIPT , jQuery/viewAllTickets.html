@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View All Tickets</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/zohodesk-sdk.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+            
+		$(document).ready(function(){
+		    $("#getTicketList").click(
+		      function() {
+		        var auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
+		        var org_id=652853630; //your_organization_id
+		        var include_fields='contacts,products';
+		        var ticket_data = '';
+		        $.ajax(
+		          {
+		          	method:"GET",
+		            url: "https://desk.zoho.com/api/v1/tickets?include="+include_fields,
+		            contentType: "application/json; charset=utf-8",
+		            dataType: "json",
+		            headers: {
+		              "Authorization": auth_token,
+		              "orgId":org_id
+		            },
+		            data:{
+		            	include:include_fields
+		            },
+		            success: function(data, textStatus, jqXHR) {
+		              console.log(data);
+		              $('#TicketList .ResponsePanel').text(JSON.stringify(data,null,2));
+		              debugTrace(jqXHR,'success');
+		            },
+		            error: function(jqXHR, tranStatus) {
+		              debugTrace(jqXHR,'error');
+		            }
+		          }
+		        );
+		      }
+		    );
+		});
+		
+		function getNativeResponse(){
+				var api_response;
+			    var auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
+		        var org_id=652853630; //your_organization_id
+		        var include_fields='contacts,products';
+		        var ticket_id = '215666000000074114';
+		        var http_headers=new Headers({
+		        	"Authorization": auth_token,
+		            "orgId":org_id,
+		            "contentType": "application/json; charset=utf-8"
+		        });
+		        var http_init={
+		        	method:"GET",
+		        	headers:http_headers,
+		        	mode: 'cors'
+		        };
+		        fetch("https://desk.zoho.com/api/v1/tickets?include="+include_fields,http_init).then(function(response){
+		        	api_response=response;
+		        	if(response.ok) {
+					    return response.json();
+					}
+  					throw new Error("Request Not Successful");
+		        }).then(function(result){
+		        	console.log("ok");
+		        	$('#TicketList .ResponsePanel').text(JSON.stringify(result,null,2));
+		        	debugTraceNative(api_response,api_response.ok);
+		        }).catch(function(error) {
+				  	debugTraceNative(api_response,api_response.ok);
+				});
+		}
+	</script>
+	<div id="TicketList">
+	<button id="getTicketList">
+		Get All Ticket List jQuery
+	</button>
+	<button id="getTicketListNative">
+		Get Ticket Details Native Javascript
+	</button><br><br>
+
+	<div id="responseCode">
+		
+	</div>
+	<h1>Response</h1>
+	<pre>
+		<code class="ResponsePanel">
+			
+		</code>
+	</pre>
+	</div>
+	<script>
+		document.getElementById('getTicketListNative').addEventListener("click",function(){
+			getNativeResponse();
+		});
+	</script>
+</body>
+</html>

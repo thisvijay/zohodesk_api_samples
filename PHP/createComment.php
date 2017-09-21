@@ -15,12 +15,7 @@
             "contentType: application/json; charset=utf-8",
     );
     
-    try{
-        
-        if(!$ticket_id){
-            throw new Exception("ERROR : Ticket ID is missing");
-        }
-    
+    if($ticket_id){
         $url="https://desk.zoho.com/api/v1/tickets/$ticket_id/comments";
 
         $comment_data=(gettype($comment_data)==="array")? json_encode($comment_data):$comment_data;
@@ -43,10 +38,10 @@
             echo "Response : $response";
         }
 
-    curl_close($ch);
-    
-    }catch (Exception $ex) {
-        echo $ex->getMessage();
+        curl_close($ch);
     }
+    else{
+        echo "ERROR : Ticket ID is missing";
+    }   
     
 ?>

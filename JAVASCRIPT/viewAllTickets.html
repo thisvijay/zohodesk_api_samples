@@ -3,7 +3,6 @@
 <head>
 	<title>View All Tickets</title>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/zohodesk-sdk.js"></script>
 </head>
 <body>
 	<script type="text/javascript">
@@ -71,6 +70,14 @@
 		        }).catch(function(error) {
 				  	debugTraceNative(api_response,api_response.ok);
 				});
+		}
+                function debugTrace(jqXHR,status){
+			$('#responseCode').text("Code: "+jqXHR.status+" Status: "+jqXHR.statusText).css({color:(status=='success')?'blue':'red'});
+			console.log(jqXHR);
+		}
+		function debugTraceNative(response,status){
+			$('#responseCode').text("Code: "+response.status+" Status: "+response.statusText).css({color:(status)?'blue':'red'});
+			console.log(response);
 		}
 	</script>
 	<div id="TicketList">

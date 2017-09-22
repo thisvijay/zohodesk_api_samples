@@ -10,8 +10,10 @@
             "contentType: application/json; charset=utf-8",
     );
     
+    $params="limit=15&sortBy=commentedTime"; //options as parameters
+    
     if($ticket_id){
-        $url="https://desk.zoho.com/api/v1/tickets/$ticket_id/comments";
+        $url="https://desk.zoho.com/api/v1/tickets/$ticket_id/comments?$params";
 
         $ch= curl_init($url);
         curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);

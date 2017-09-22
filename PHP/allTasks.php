@@ -9,7 +9,9 @@
             "contentType: application/json; charset=utf-8",
     );
     
-    $url="https://desk.zoho.com/api/v1/tasks";
+    $params="sortBy=-createdTime"; //options as parameters
+    
+    $url="https://desk.zoho.com/api/v1/tasks?$params";
     
     $ch= curl_init($url);
     curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);

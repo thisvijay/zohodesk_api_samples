@@ -9,7 +9,9 @@
             "contentType: application/json; charset=utf-8",
     );
     
-    $url="https://desk.zoho.com/api/v1/contacts";
+    $params="limit=20"; //options as parameters
+    
+    $url="https://desk.zoho.com/api/v1/contacts?$params";
     
     $ch= curl_init($url);
     curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);

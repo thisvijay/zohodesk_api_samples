@@ -10,8 +10,10 @@
             "contentType: application/json; charset=utf-8",
     );
     
+    $params="include=contacts,products";
+    
     if($ticket_id){
-        $url="https://desk.zoho.com/api/v1/tickets/$ticket_id";
+        $url="https://desk.zoho.com/api/v1/tickets/$ticket_id?$params";
 
         $ch= curl_init($url);
         curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);

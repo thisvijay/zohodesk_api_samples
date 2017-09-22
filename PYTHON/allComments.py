@@ -12,10 +12,15 @@ headers={
     "contentType": "application/json; charset=utf-8"
 }
 
-request=requests.get('https://desk.zoho.com/api/v1/tickets/'+ticket_id+'/comments?'+params, headers=headers)
+if ticket_id:
 
-if request.status_code == 200:
-    print "Request Successful,Response:"
-    print request.content
+    request=requests.get('https://desk.zoho.com/api/v1/tickets/'+ticket_id+'/comments?'+params, headers=headers)
+
+    if request.status_code == 200:
+        print "Request Successful,Response:"
+        print request.content
+    else:
+        print "Request not successful,Response code ",request.status_code," \nResponse : ",request.content;
+
 else:
-    print "Request not successful,Response code ",request.status_code," \nResponse : ",request.content;
+    print "Ticket ID is missing"

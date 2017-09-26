@@ -12,7 +12,7 @@ class UpdateTicket
 
         string ticket_id = "215666000000198001";
 
-        string ticket_data = "{\"subject\" : \" from C# Updated Welcome to Zoho Support. Youve got a sample Request!\"}";
+        string ticket_data = "{\"subject\" : \" from C# 2 Updated Welcome to Zoho Support. Youve got a sample Request!\"}";
 
         if (ticket_id != "")
         {
@@ -35,13 +35,15 @@ class UpdateTicket
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream receiveStream = response.GetResponseStream();
                 StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                Console.WriteLine("Response Code : " + (int)response.StatusCode);
                 if ((int)response.StatusCode == 200)
                 {
-                    Console.WriteLine("Ticket Successfully created ,\nResponse Code : " + (int)response.StatusCode);
+                    Console.WriteLine("Ticket Successfully Updated ");
                     Console.WriteLine(readStream.ReadToEnd());
-                    response.Close();
-                    readStream.Close();
+                    
                 }
+                response.Close();
+                readStream.Close();
 
             }
             catch (WebException e)

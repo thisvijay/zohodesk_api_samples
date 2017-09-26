@@ -27,13 +27,13 @@ class TicketDetails
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream receiveStream = response.GetResponseStream();
                 StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                Console.WriteLine("Response Code : " + (int)response.StatusCode);
                 if ((int)response.StatusCode == 200)
                 {
-                    Console.WriteLine("Response Code : " + (int)response.StatusCode);
                     Console.WriteLine(readStream.ReadToEnd());
-                    response.Close();
-                    readStream.Close();
                 }
+                response.Close();
+                readStream.Close();
 
             }
             catch (WebException e)

@@ -11,7 +11,7 @@ class DeleteComment
 		string org_id = "652853630"; //YOUR_ORG_ID
 
 		string ticket_id = "215666000000198001";
-        string comment_id = "215666000000169005";
+        string comment_id = "215666000000171025";
 
         if (ticket_id != "" && comment_id !="")
 		{

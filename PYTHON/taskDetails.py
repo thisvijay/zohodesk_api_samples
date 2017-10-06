@@ -3,9 +3,9 @@ import requests
 auth_token="59550a0e2b1a864a31bef962363e029f" #YOUR_AUTH_TOKEN
 org_id="652853630" #YOUR_ORGANISATION_ID
 
-task_id="215666000000177011";
+task_id="215666000000177011"; #TASK_ID
 
-params="include=tickets"
+params="include=tickets" #Options
 
 headers={
     "Authorization":auth_token,

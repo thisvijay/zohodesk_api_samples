@@ -3,9 +3,9 @@ import requests
 auth_token="59550a0e2b1a864a31bef962363e029f" #YOUR_AUTH_TOKEN
 org_id="652853630" #YOUR_ORGANISATION_ID
 
-contact_id="215666000000175001";
+contact_id="215666000000175001" #Contact ID
 
-params="include=accounts"
+params="include=accounts" #OPTIONS
 
 headers={
     "Authorization":auth_token,

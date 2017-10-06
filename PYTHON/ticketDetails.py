@@ -3,8 +3,8 @@ import requests
 auth_token="59550a0e2b1a864a31bef962363e029f" #YOUR_AUTH_TOKEN
 org_id="652853630" #YOUR_ORGANISATION_ID
 
-ticket_id="215666000000137001";
-params="include=contacts,products"
+ticket_id="215666000000137001"; #Ticket ID
+params="include=contacts,products" #Options as Parameters to be fetched
 
 headers={
     "Authorization":auth_token,

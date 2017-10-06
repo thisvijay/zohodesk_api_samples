@@ -2,9 +2,9 @@ import requests
 
 auth_token="59550a0e2b1a864a31bef962363e029f" #YOUR_AUTH_TOKEN
 org_id="652853630" #YOUR_ORGANISATION_ID
-ticket_id='215666000000074114';
+ticket_id='215666000000074114'; #TICKET_ID_OF_THREAD
 
-params="limit=15"
+params="limit=15" #OPTIONS
 
 headers={
     "Authorization":auth_token,

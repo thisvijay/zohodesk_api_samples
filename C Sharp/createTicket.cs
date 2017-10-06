@@ -10,7 +10,7 @@ class CreateTicket
 		string auth_token = "59550a0e2b1a864a31bef962363e029f"; // YOUR_AUTH_TOKEN
 		string org_id = "652853630"; //YOUR_ORG_ID
 
-		string ticket_data ="{\"contactId\" : \"215666000000074112\", \"subject\" : \" from C# Welcome to Zoho Support. Youve got a sample Request!\", \"departmentId\" : \"215666000000006907\", \"description\" : \"Hai This is Description\"}";
+		string ticket_data =@"{""contactId"" : ""215666000000074112"", ""subject"" : "" from C# Welcome to Zoho Support. Youve got a sample Request!"", ""departmentId"" : ""215666000000006907"", ""description"" : ""Hai This is Description""}";
 
 		HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://desk.zoho.com/api/v1/tickets");
 		request.ContentType = "application/json";
@@ -35,7 +35,7 @@ class CreateTicket
 			{
 				Console.WriteLine("Ticket Successfully created ");
 				Console.WriteLine(readStream.ReadToEnd());
-				
+
 			}
 			response.Close();
 			readStream.Close();

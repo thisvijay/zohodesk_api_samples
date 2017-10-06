@@ -10,7 +10,7 @@ class AllTickets
         string auth_token = "59550a0e2b1a864a31bef962363e029f"; // YOUR_AUTH_TOKEN
         string org_id = "652853630"; //YOUR_ORG_ID
 
-        string options = "sortBy=dueDate&limit=15";
+        string options = "sortBy=dueDate&limit=15"; //Options as parameters
 
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://desk.zoho.com/api/v1/tickets?" + options);
         request.ContentType = "application/json";

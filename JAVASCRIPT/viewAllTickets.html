@@ -6,14 +6,13 @@
 </head>
 <body>
 	<script type="text/javascript">
-            
+
 		$(document).ready(function(){
 		    $("#getTicketList").click(
 		      function() {
 		        var auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
 		        var org_id=652853630; //your_organization_id
-		        var include_fields='contacts,products';
-		        var ticket_data = '';
+		        var include_fields='contacts,products'; //Options as parameters
 		        $.ajax(
 		          {
 		          	method:"GET",
@@ -40,13 +39,12 @@
 		      }
 		    );
 		});
-		
+
 		function getNativeResponse(){
 				var api_response;
 			    var auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
 		        var org_id=652853630; //your_organization_id
-		        var include_fields='contacts,products';
-		        var ticket_id = '215666000000074114';
+		        var include_fields='contacts,products'; //Options as parameters
 		        var http_headers=new Headers({
 		        	"Authorization": auth_token,
 		            "orgId":org_id,
@@ -85,16 +83,16 @@
 		Get All Ticket List jQuery
 	</button>
 	<button id="getTicketListNative">
-		Get Ticket Details Native Javascript
+		Get All Ticket List Native Javascript
 	</button><br><br>
 
 	<div id="responseCode">
-		
+
 	</div>
 	<h1>Response</h1>
 	<pre>
 		<code class="ResponsePanel">
-			
+
 		</code>
 	</pre>
 	</div>

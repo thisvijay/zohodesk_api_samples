@@ -11,8 +11,8 @@
 		      function() {
 		        var auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
 		        var org_id=652853630; //your_organization_id
-		        var include_fields='contacts,products';
-		        var ticket_id = '215666000000074114';
+		        var include_fields='contacts,products'; //Options as parameters
+		        var ticket_id = '215666000000074114'; //Ticket ID
 		        $.ajax(
 		          {
 		          	method:"GET",
@@ -52,8 +52,10 @@
 				var api_response;
 			    var auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
 		        var org_id=652853630; //your_organization_id
-		        var include_fields='contacts,products';
-		        var ticket_id = '215666000000074114';
+						var ticket_id = '215666000000074114'; //Ticket ID
+						
+		        var include_fields='contacts,products'; //Options as parameters
+
 		        var http_headers=new Headers({
 		        	"Authorization": auth_token,
 		            "orgId":org_id,
@@ -88,12 +90,12 @@
 	</button>
 	<br><br>
 	<div id="responseCode">
-		
+
 	</div>
 	<h1>Response</h1>
 	<pre>
 		<code class="ResponsePanel">
-			
+
 		</code>
 	</pre>
 	</div>

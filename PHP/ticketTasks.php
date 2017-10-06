@@ -1,15 +1,15 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $ticket_id="215666000000154051";
-    
+    $ticket_id="215666000000154051"; //Ticket ID of tasks to be fetched
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($ticket_id){
         $url="https://desk.zoho.com/api/v1/tickets/$ticket_id/tasks";
 
@@ -35,5 +35,5 @@
     else{
         echo "ERROR : Ticket ID is missing";
     }
-    
+
 ?>

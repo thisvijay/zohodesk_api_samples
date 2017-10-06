@@ -1,15 +1,15 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $department_id="215666000000006907";
-    
+    $department_id="215666000000006907"; //Department ID
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($department_id){
         $url="https://desk.zoho.com/api/v1/departments/$department_id";
 
@@ -35,5 +35,5 @@
     else{
         echo "ERROR : Department ID is missing";
     }
-    
+
 ?>

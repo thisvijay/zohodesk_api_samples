@@ -1,20 +1,20 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $task_id="215666000000150089";
-    
+    $task_id="215666000000150089"; //Task ID to be updated
+
     $task_data=array(
         "description"=>"some changed task description",
         "priority"=>"medium"
     );
-    
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($task_id){
         $url="https://desk.zoho.com/api/v1/tasks/$task_id";
 
@@ -42,5 +42,5 @@
     }else{
         echo "ERROR : Task ID is missing";
     }
-    
+
 ?>

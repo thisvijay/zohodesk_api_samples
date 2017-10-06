@@ -1,16 +1,16 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $ticket_id="215666000000074114";
-    $thread_id="215666000000074146";
-    
+    $ticket_id="215666000000074114"; //Ticket ID of the thread
+    $thread_id="215666000000074146"; //Thread ID
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($ticket_id && $thread_id){
         $url="https://desk.zoho.com/api/v1/tickets/$ticket_id/comments/$thread_id";
 
@@ -38,6 +38,6 @@
         echo (!$ticket_id)?"Ticket ID ":"";
         echo (!$thread_id)?" Thread ID ":"";
         echo " is missing";
-    }   
-    
+    }
+
 ?>

@@ -1,21 +1,21 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $contact_id="215666000000175003";
-    
+    $contact_id="215666000000175003"; //Contact ID to be updated
+
     $contact_data=array(
         "firstName"=>"My Changed first name",
         "email"=>"example_changed@example.com",
         "description"=>"Some changed description"
     );
-    
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($contact_id){
         $url="https://desk.zoho.com/api/v1/contacts/$contact_id";
 
@@ -43,5 +43,5 @@
     }else{
         echo "ERROR : Contact ID is missing";
     }
-    
+
 ?>

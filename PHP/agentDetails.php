@@ -1,15 +1,15 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $agent_id="215666000000074005";
-    
+    $agent_id="215666000000074005"; //AGENT_ID
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($agent_id){
         $url="https://desk.zoho.com/api/v1/agents/$agent_id";
 
@@ -35,5 +35,5 @@
     else{
         echo "ERROR : Agent ID is missing";
     }
-    
+
 ?>

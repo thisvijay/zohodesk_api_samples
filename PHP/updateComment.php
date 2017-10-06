@@ -1,20 +1,20 @@
 <?php
-    
+
     $auth_token = '59550a0e2b1a864a31bef962363e029f'; //your_auth_token
     $org_id=652853630; //your_organization_id
-    $ticket_id="215666000000074114";
-    $comment_id="215666000000166017";
-    
+    $ticket_id="215666000000074114"; //Ticket ID of the comment
+    $comment_id="215666000000166017"; //Comment ID to be updated
+
     $comment_data=array(
         "content"=>"This is changed sample comment content"
     );
-    
+
     $headers=array(
             "Authorization: $auth_token",
             "orgId: $org_id",
             "contentType: application/json; charset=utf-8",
     );
-    
+
     if($ticket_id && $comment_id){
         $url="https://desk.zoho.com/api/v1/tickets/$ticket_id/comments/$comment_id";
 
@@ -24,7 +24,7 @@
         curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
         curl_setopt($ch,CURLOPT_CUSTOMREQUEST,"PATCH");
-        curl_setopt($ch, CURLOPT_POSTFIELDS,$comment_data); //convert ticket data array to json
+        curl_setopt($ch, CURLOPT_POSTFIELDS,$comment_data); 
 
         $response= curl_exec($ch);
         $info= curl_getinfo($ch);
@@ -45,6 +45,6 @@
         echo (!$ticket_id)?"Ticket ID ":"";
         echo (!$comment_id)?" Comment ID ":"";
         echo " is missing";
-    }   
-    
+    }
+
 ?>
